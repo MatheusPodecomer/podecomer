@@ -1,0 +1,20 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const receitas = await getCollection('receitas');
+---
+<Layout title="Receitas">
+  <h1>Todas as receitas</h1>
+  <ul style="list-style: none; padding: 0;">
+    {receitas.map((receita) => (
+      <li style="margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #ddd;">
+        <a href={`/receitas/${receita.slug}`} style="font-size: 1.2rem; font-weight: bold; color: #2f6f4e;">
+          {receita.data.title}
+        </a>
+        <p style="margin: 0.3rem 0 0;">{receita.data.descricao}</p>
+        <span style="font-size: 0.85rem; color: #888;">Categoria: {receita.data.categoria}</span>
+      </li>
+    ))}
+  </ul>
+</Layout>

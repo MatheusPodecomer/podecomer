@@ -1,0 +1,23 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const receitas = await getCollection('receitas');
+  return receitas.map((receita) => ({
+    params: { slug: receita.slug },
+    props: { receita },
+  }));
+}
+
+const { receita } = Astro.props;
+const { Content } = await receita.render();
+---
+<Layout title={receita.data.title}>
+  <p><a href="/receitas">← Voltar para todas as receitas</a></p>
+  <h1>{receita.data.title}</h1>
+  <p style="color: #666;">{receita.data.descricao}</p>
+  <span style="font-size: 0.85rem; color: #888;">Categoria: {receita.data.categoria}</span>
+  <hr />
+  <Content />
+</Layout>

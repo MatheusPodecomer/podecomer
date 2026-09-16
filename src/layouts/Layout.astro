@@ -1,0 +1,83 @@
+---
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+---
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} · PodeComer</title>
+  </head>
+  <body>
+    <header>
+      <a href="/" class="logo">PodeComer</a>
+      <nav>
+        <a href="/">Início</a>
+        <a href="/receitas">Receitas</a>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer>
+      <p>&copy; {new Date().getFullYear()} PodeComer — Receitas para quem tem restrições alimentares.</p>
+    </footer>
+
+    <style>
+      :root {
+        --verde: #2f6f4e;
+        --creme: #fdf8f0;
+        --texto: #2b2b2b;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, sans-serif;
+        background: var(--creme);
+        color: var(--texto);
+        line-height: 1.6;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.25rem 2rem;
+        background: var(--verde);
+      }
+      .logo {
+        color: white;
+        font-size: 1.4rem;
+        font-weight: bold;
+        text-decoration: none;
+      }
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 1.5rem;
+        font-weight: 500;
+      }
+      nav a:hover {
+        text-decoration: underline;
+      }
+      main {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem 1.5rem;
+        min-height: 60vh;
+      }
+      footer {
+        text-align: center;
+        padding: 1.5rem;
+        font-size: 0.85rem;
+        color: #666;
+      }
+    </style>
+  </body>
+</html>
