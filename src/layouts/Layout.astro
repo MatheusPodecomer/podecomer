@@ -9,74 +9,159 @@ const { title } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <title>{title} · PodeComer</title>
   </head>
   <body>
-    <header>
-      <a href="/" class="logo">PodeComer</a>
-      <nav>
-        <a href="/">Início</a>
-        <a href="/receitas">Receitas</a>
-      </nav>
-    </header>
+    <div class="nav-wrap">
+      <header>
+        <a href="/" class="logo">
+          <span class="logo-badge">🍽️</span> PodeComer
+        </a>
+        <nav>
+          <a href="/">Início</a>
+          <a href="/receitas">Receitas</a>
+        </nav>
+      </header>
+    </div>
 
     <main>
       <slot />
     </main>
 
-    <footer><p>&copy; {new Date().getFullYear()} PodeComer — Receitas para quem tem restrições alimentares.</p>
-      <p><a href="/politica-de-privacidade" style="color: #ccc;">Política de Privacidade</a></p>
+    <footer>
+      <p>&copy; {new Date().getFullYear()} PodeComer — Receitas para quem tem restrições alimentares.</p>
+      <p><a href="/politica-de-privacidade">Política de Privacidade</a></p>
     </footer>
 
-    <style>
+    <style is:global>
       :root {
-        --verde: #2f6f4e;
-        --creme: #fdf8f0;
-        --texto: #2b2b2b;
+        --mostarda: #d9a441;
+        --mostarda-escura: #b9822c;
+        --terracota: #c1602b;
+        --marrom: #3a2a1e;
+        --creme: #fdf6ec;
+        --creme-forte: #f6e9d3;
+        --texto: #3a2a1e;
       }
       * {
         box-sizing: border-box;
       }
+      html {
+        scroll-behavior: smooth;
+      }
       body {
         margin: 0;
-        font-family: system-ui, -apple-system, sans-serif;
+        font-family: 'Nunito Sans', system-ui, sans-serif;
         background: var(--creme);
         color: var(--texto);
-        line-height: 1.6;
+        line-height: 1.65;
+      }
+      h1, h2, h3 {
+        font-family: 'Fraunces', Georgia, serif;
+      }
+      .nav-wrap {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        padding: 1rem 1.25rem 0;
+        background: var(--creme);
       }
       header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 1.25rem 2rem;
-        background: var(--verde);
+        gap: 1rem;
+        padding: 0.85rem 1.5rem;
+        background: var(--marrom);
+        border-radius: 999px;
+        max-width: 900px;
+        margin: 0 auto;
+        box-shadow: 0 6px 18px rgba(58, 42, 30, 0.18);
       }
       .logo {
-        color: white;
-        font-size: 1.4rem;
-        font-weight: bold;
+        color: var(--creme);
+        font-family: 'Fraunces', serif;
+        font-size: 1.25rem;
+        font-weight: 700;
         text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .logo-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2rem;
+        height: 2rem;
+        background: var(--mostarda);
+        border-radius: 50%;
+        font-size: 1rem;
       }
       nav a {
-        color: white;
+        color: var(--creme);
         text-decoration: none;
-        margin-left: 1.5rem;
-        font-weight: 500;
+        margin-left: 1.25rem;
+        font-weight: 600;
+        font-size: 0.95rem;
+        opacity: 0.9;
       }
       nav a:hover {
+        opacity: 1;
         text-decoration: underline;
       }
       main {
         max-width: 800px;
         margin: 0 auto;
-        padding: 2rem 1.5rem;
-        min-height: 60vh;
+        padding: 2.5rem 1.5rem;
+        min-height: 55vh;
       }
       footer {
         text-align: center;
-        padding: 1.5rem;
+        padding: 2rem 1.5rem 2.5rem;
         font-size: 0.85rem;
-        color: #666;
+        color: #7a6a5a;
+      }
+      footer a {
+        color: #7a6a5a;
+      }
+      .btn-pill {
+        display: inline-block;
+        padding: 0.85rem 2rem;
+        border-radius: 999px;
+        border: 2px solid var(--creme);
+        color: var(--creme);
+        text-decoration: none;
+        font-weight: 700;
+        font-family: 'Fraunces', serif;
+        transition: background 0.2s ease, color 0.2s ease;
+      }
+      .btn-pill:hover {
+        background: var(--creme);
+        color: var(--marrom);
+      }
+      .btn-pill.solid {
+        background: var(--mostarda);
+        border-color: var(--mostarda);
+        color: var(--marrom);
+      }
+      .btn-pill.solid:hover {
+        background: var(--mostarda-escura);
+        border-color: var(--mostarda-escura);
+        color: white;
+      }
+      .tag {
+        display: inline-block;
+        background: var(--creme-forte);
+        color: var(--terracota);
+        border-radius: 999px;
+        padding: 0.2rem 0.75rem;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
       }
     </style>
   </body>
