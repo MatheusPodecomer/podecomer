@@ -1,14 +1,89 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const receitas = await getCollection('receitas');
+const destaques = receitas.slice(0, 3);
 ---
 <Layout title="Início">
-  <section>
-    <h1>Bem-vindo ao PodeComer 🍽️</h1>
+  <section class="hero">
+    <span class="tag">Feito com carinho</span>
+    <h1>Saboroso, seguro<br />e sem restrição de sabor</h1>
     <p>
-      Receitas testadas e pensadas para quem tem restrições alimentares —
+      Receitas testadas e pensadas pra quem tem restrições alimentares —
       sem lactose, sem glúten e muito mais. Aqui você encontra o que
       <strong>pode comer</strong>, sem complicação.
     </p>
-    <p><a href="/receitas">Ver todas as receitas →</a></p>
+    <a href="/receitas" class="btn-pill solid">Ver Receitas</a>
   </section>
+
+  {destaques.length > 0 && (
+    <section class="destaques">
+      <h2>Receitas em destaque</h2>
+      <div class="cards">
+        {destaques.map((receita) => (
+          <a href={`/receitas/${receita.slug}`} class="card">
+            <span class="tag">{receita.data.categoria}</span>
+            <h3>{receita.data.title}</h3>
+            <p>{receita.data.descricao}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <style>
+    .hero {
+      text-align: center;
+      padding: 2rem 1rem 3rem;
+    }
+    .hero h1 {
+      font-size: 2.4rem;
+      line-height: 1.15;
+      margin: 1rem 0;
+      color: var(--marrom);
+    }
+    .hero p {
+      max-width: 480px;
+      margin: 0 auto 1.75rem;
+      color: #5c4a3a;
+    }
+    .destaques {
+      padding-top: 1rem;
+      border-top: 1px solid var(--creme-forte);
+    }
+    .destaques h2 {
+      text-align: center;
+      color: var(--marrom);
+      margin-bottom: 1.5rem;
+    }
+    .cards {
+      display: grid;
+      gap: 1.25rem;
+    }
+    .card {
+      display: block;
+      background: white;
+      border-radius: 18px;
+      padding: 1.5rem;
+      text-decoration: none;
+      color: var(--texto);
+      box-shadow: 0 4px 14px rgba(58, 42, 30, 0.08);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(58, 42, 30, 0.14);
+    }
+    .card h3 {
+      margin: 0.6rem 0 0.4rem;
+      font-size: 1.15rem;
+      color: var(--marrom);
+    }
+    .card p {
+      margin: 0;
+      font-size: 0.92rem;
+      color: #6b5a4a;
+    }
+  </style>
 </Layout>
