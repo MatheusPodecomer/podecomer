@@ -6,15 +6,48 @@ const receitas = await getCollection('receitas');
 ---
 <Layout title="Receitas">
   <h1>Todas as receitas</h1>
-  <ul style="list-style: none; padding: 0;">
+  <div class="cards">
     {receitas.map((receita) => (
-      <li style="margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #ddd;">
-        <a href={`/receitas/${receita.slug}`} style="font-size: 1.2rem; font-weight: bold; color: #2f6f4e;">
-          {receita.data.title}
-        </a>
-        <p style="margin: 0.3rem 0 0;">{receita.data.descricao}</p>
-        <span style="font-size: 0.85rem; color: #888;">Categoria: {receita.data.categoria}</span>
-      </li>
+      <a href={`/receitas/${receita.slug}`} class="card">
+        <span class="tag">{receita.data.categoria}</span>
+        <h3>{receita.data.title}</h3>
+        <p>{receita.data.descricao}</p>
+      </a>
     ))}
-  </ul>
+  </div>
+
+  <style>
+    h1 {
+      color: var(--marrom);
+      margin-bottom: 1.5rem;
+    }
+    .cards {
+      display: grid;
+      gap: 1.25rem;
+    }
+    .card {
+      display: block;
+      background: white;
+      border-radius: 18px;
+      padding: 1.5rem;
+      text-decoration: none;
+      color: var(--texto);
+      box-shadow: 0 4px 14px rgba(58, 42, 30, 0.08);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(58, 42, 30, 0.14);
+    }
+    .card h3 {
+      margin: 0.6rem 0 0.4rem;
+      font-size: 1.15rem;
+      color: var(--marrom);
+    }
+    .card p {
+      margin: 0;
+      font-size: 0.92rem;
+      color: #6b5a4a;
+    }
+  </style>
 </Layout>
