@@ -6,6 +6,7 @@ const receitas = defineCollection({
     title: z.string(),
     descricao: z.string(),
     categoria: z.string(),
+    imagem: z.string().optional(),
   }),
 });
 
