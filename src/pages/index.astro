@@ -14,6 +14,17 @@ const destaques = receitas.slice(0, 3);
       sem lactose, sem glúten e muito mais. Aqui você encontra o que
       <strong>pode comer</strong>, sem complicação.
     </p>
+
+    <form action="/receitas" method="get" class="busca-form">
+      <input
+        type="text"
+        name="q"
+        placeholder="🔍 Buscar por nome ou categoria..."
+        autocomplete="off"
+      />
+      <button type="submit">Buscar</button>
+    </form>
+
     <a href="/receitas" class="btn-pill solid">Ver Receitas</a>
   </section>
 
@@ -47,6 +58,42 @@ const destaques = receitas.slice(0, 3);
       max-width: 480px;
       margin: 0 auto 1.75rem;
       color: #5c4a3a;
+    }
+    .busca-form {
+      display: flex;
+      gap: 0.5rem;
+      max-width: 420px;
+      margin: 0 auto 1.75rem;
+    }
+    .busca-form input {
+      flex: 1;
+      padding: 0.75rem 1.1rem;
+      border-radius: 999px;
+      border: 2px solid var(--creme-forte);
+      background: white;
+      font-size: 0.95rem;
+      font-family: 'Nunito Sans', sans-serif;
+      color: var(--texto);
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+    .busca-form input:focus {
+      border-color: var(--mostarda);
+    }
+    .busca-form button {
+      padding: 0.75rem 1.25rem;
+      border-radius: 999px;
+      border: none;
+      background: var(--mostarda);
+      color: var(--marrom);
+      font-weight: 700;
+      font-family: 'Fraunces', serif;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    .busca-form button:hover {
+      background: var(--mostarda-escura);
+      color: white;
     }
     .destaques {
       padding-top: 1rem;
