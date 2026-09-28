@@ -97,19 +97,31 @@ const receitas = await getCollection('receitas');
     const cards = document.querySelectorAll<HTMLElement>('#lista-receitas .card');
     const semResultados = document.getElementById('sem-resultados') as HTMLElement;
 
-    input.addEventListener('input', () => {
-      const termo = input.value.toLowerCase().trim();
+    function aplicarFiltro(termo: string) {
+      const termoNormalizado = termo.toLowerCase().trim();
       let visiveis = 0;
 
       cards.forEach((card) => {
         const titulo = card.getAttribute('data-title') || '';
         const categoria = card.getAttribute('data-categoria') || '';
-        const match = titulo.includes(termo) || categoria.includes(termo);
+        const match = titulo.includes(termoNormalizado) || categoria.includes(termoNormalizado);
         card.style.display = match ? '' : 'none';
         if (match) visiveis++;
       });
 
       semResultados.style.display = visiveis === 0 ? 'block' : 'none';
+    }
+
+    // Se a pessoa veio da busca da página inicial (ex: /receitas?q=bolo)
+    const params = new URLSearchParams(window.location.search);
+    const termoInicial = params.get('q');
+    if (termoInicial) {
+      input.value = termoInicial;
+      aplicarFiltro(termoInicial);
+    }
+
+    input.addEventListener('input', () => {
+      aplicarFiltro(input.value);
     });
   </script>
 </Layout>
