@@ -6,9 +6,26 @@ const receitas = await getCollection('receitas');
 ---
 <Layout title="Receitas">
   <h1>Todas as receitas</h1>
-  <div class="cards">
+
+  <div class="busca-wrap">
+    <input
+      type="text"
+      id="busca-receitas"
+      placeholder="🔍 Buscar por nome ou categoria..."
+      autocomplete="off"
+    />
+  </div>
+
+  <p id="sem-resultados" class="sem-resultados">Nenhuma receita encontrada.</p>
+
+  <div class="cards" id="lista-receitas">
     {receitas.map((receita) => (
-      <a href={`/receitas/${receita.slug}`} class="card">
+      <a
+        href={`/receitas/${receita.slug}`}
+        class="card"
+        data-title={receita.data.title.toLowerCase()}
+        data-categoria={receita.data.categoria.toLowerCase()}
+      >
         <span class="tag">{receita.data.categoria}</span>
         <h3>{receita.data.title}</h3>
         <p>{receita.data.descricao}</p>
@@ -19,7 +36,31 @@ const receitas = await getCollection('receitas');
   <style>
     h1 {
       color: var(--marrom);
+      margin-bottom: 1rem;
+    }
+    .busca-wrap {
       margin-bottom: 1.5rem;
+    }
+    #busca-receitas {
+      width: 100%;
+      padding: 0.85rem 1.25rem;
+      border-radius: 999px;
+      border: 2px solid var(--creme-forte);
+      background: white;
+      font-size: 1rem;
+      font-family: 'Nunito Sans', sans-serif;
+      color: var(--texto);
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+    #busca-receitas:focus {
+      border-color: var(--mostarda);
+    }
+    .sem-resultados {
+      display: none;
+      text-align: center;
+      color: #8a7a6a;
+      padding: 1rem 0;
     }
     .cards {
       display: grid;
@@ -50,4 +91,25 @@ const receitas = await getCollection('receitas');
       color: #6b5a4a;
     }
   </style>
+
+  <script>
+    const input = document.getElementById('busca-receitas') as HTMLInputElement;
+    const cards = document.querySelectorAll<HTMLElement>('#lista-receitas .card');
+    const semResultados = document.getElementById('sem-resultados') as HTMLElement;
+
+    input.addEventListener('input', () => {
+      const termo = input.value.toLowerCase().trim();
+      let visiveis = 0;
+
+      cards.forEach((card) => {
+        const titulo = card.getAttribute('data-title') || '';
+        const categoria = card.getAttribute('data-categoria') || '';
+        const match = titulo.includes(termo) || categoria.includes(termo);
+        card.style.display = match ? '' : 'none';
+        if (match) visiveis++;
+      });
+
+      semResultados.style.display = visiveis === 0 ? 'block' : 'none';
+    });
+  </script>
 </Layout>
