@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Contato">
+  <h1>Fale com a gente</h1>
+
+  <p>
+    Tem alguma dúvida, sugestão de receita, encontrou algum erro por aqui
+    ou só quer dar um oi? Ficaríamos muito felizes em ouvir você.
+  </p>
+
+  <p class="contato-botao">
+    <a href="mailto:contato@podecomer.blog.br" class="btn-pill solid">
+      ✉️ contato@podecomer.blog.br
+    </a>
+  </p>
+
+  <p>
+    Respondemos o mais rápido possível. E se a sua mensagem for sobre uma
+    restrição alimentar específica que você gostaria de ver mais por aqui,
+    conta pra gente — isso ajuda demais a definir as próximas receitas!
+  </p>
+
+  <style>
+    .contato-botao {
+      text-align: center;
+      margin: 2rem 0;
+    }
+    .contato-botao .btn-pill {
+      background: var(--marrom);
+      border-color: var(--marrom);
+      color: var(--creme);
+    }
+    .contato-botao .btn-pill:hover {
+      background: var(--mostarda);
+      border-color: var(--mostarda);
+      color: var(--marrom);
+    }
+  </style>
+</Layout>
