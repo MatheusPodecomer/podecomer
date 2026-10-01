@@ -25,6 +25,21 @@ const { Content } = await receita.render();
     <Content />
   </div>
 
+  {receita.data.produtos && receita.data.produtos.length > 0 && (
+    <div class="produtos">
+      <p class="produtos-titulo">Produtos usados nesta receita</p>
+      <ul>
+        {receita.data.produtos.map((produto) => (
+          <li>
+            <a href={produto.url} rel="sponsored noopener" target="_blank">
+              {produto.nome}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )}
+
   <style>
     .voltar {
       color: var(--terracota);
@@ -67,6 +82,38 @@ const { Content } = await receita.render();
     }
     .conteudo :global(li) {
       margin-bottom: 0.35rem;
+    }
+    .produtos {
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--creme-forte);
+    }
+    .produtos-titulo {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #9a8a7a;
+      margin: 0 0 0.5rem;
+    }
+    .produtos ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .produtos a {
+      display: inline-block;
+      font-size: 0.85rem;
+      color: var(--terracota);
+      background: var(--creme-forte);
+      border-radius: 999px;
+      padding: 0.35rem 0.9rem;
+      text-decoration: none;
+    }
+    .produtos a:hover {
+      text-decoration: underline;
     }
   </style>
 </Layout>
