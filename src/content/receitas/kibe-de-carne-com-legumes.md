@@ -2,6 +2,9 @@
 title: "Kibe de Carne com Legumes"
 descricao: "Kibe assado recheado de legumes ralados — uma opção prática e sem lactose para o dia a dia."
 categoria: "Sem lactose"
+produtos:
+  - nome: "Cortador de Legumes 16 em 1 Cortador Ralador Picador Multifuncional"
+    url: "https://s.shopee.com.br/7ptgfAz4lr"
 ---
 
 Tempo de preparo: cerca de 60 minutos.
