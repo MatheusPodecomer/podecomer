@@ -1,0 +1,62 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const artigos = await getCollection('artigos');
+---
+<Layout title="Guia">
+  <h1>Guia PodeComer</h1>
+  <p class="intro">
+    Além das receitas, reunimos aqui conteúdos pra te ajudar a entender
+    melhor as restrições alimentares e cozinhar com mais segurança no
+    dia a dia.
+  </p>
+
+  <div class="cards">
+    {artigos.map((artigo) => (
+      <a href={`/guia/${artigo.slug}`} class="card">
+        <h3>{artigo.data.title}</h3>
+        <p>{artigo.data.descricao}</p>
+      </a>
+    ))}
+  </div>
+
+  <style>
+    h1 {
+      color: var(--marrom);
+      margin-bottom: 0.5rem;
+    }
+    .intro {
+      color: #6b5a4a;
+      margin-bottom: 1.5rem;
+    }
+    .cards {
+      display: grid;
+      gap: 1.25rem;
+    }
+    .card {
+      display: block;
+      background: white;
+      border-radius: 18px;
+      padding: 1.5rem;
+      text-decoration: none;
+      color: var(--texto);
+      box-shadow: 0 4px 14px rgba(58, 42, 30, 0.08);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(58, 42, 30, 0.14);
+    }
+    .card h3 {
+      margin: 0 0 0.4rem;
+      font-size: 1.15rem;
+      color: var(--marrom);
+    }
+    .card p {
+      margin: 0;
+      font-size: 0.92rem;
+      color: #6b5a4a;
+    }
+  </style>
+</Layout>
