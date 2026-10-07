@@ -1,0 +1,60 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const artigos = await getCollection('artigos');
+  return artigos.map((artigo) => ({
+    params: { slug: artigo.slug },
+    props: { artigo },
+  }));
+}
+
+const { artigo } = Astro.props;
+const { Content } = await artigo.render();
+---
+<Layout title={artigo.data.title}>
+  <p><a href="/guia" class="voltar">← Voltar para o Guia</a></p>
+  <h1>{artigo.data.title}</h1>
+  <p class="descricao">{artigo.data.descricao}</p>
+  <div class="conteudo">
+    <Content />
+  </div>
+
+  <style>
+    .voltar {
+      color: var(--terracota);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    h1 {
+      color: var(--marrom);
+      margin: 0.75rem 0 0.5rem;
+    }
+    .descricao {
+      color: #6b5a4a;
+      font-size: 1.05rem;
+      margin-bottom: 1.5rem;
+    }
+    .conteudo {
+      background: white;
+      border-radius: 18px;
+      padding: 1.75rem;
+      box-shadow: 0 4px 14px rgba(58, 42, 30, 0.08);
+    }
+    .conteudo :global(h2) {
+      color: var(--marrom);
+      margin-top: 1.5rem;
+    }
+    .conteudo :global(h2:first-child) {
+      margin-top: 0;
+    }
+    .conteudo :global(ul), .conteudo :global(ol) {
+      padding-left: 1.25rem;
+    }
+    .conteudo :global(li) {
+      margin-bottom: 0.35rem;
+    }
+  </style>
+</Layout>
