@@ -55,4 +55,4 @@ Rende 6 a 8 porções · aproximadamente 1 hora e 15 minutos de preparo.
 15. Retire o papel-alumínio e asse por mais 10 a 15 minutos, até dourar.
 16. Deixe descansar por cerca de 10 minutos antes de servir.
 
-**Dica:** para uma receita realmente adequada a pessoas com intolerância à lactose, confira os rótulos da massa, do leite vegetal e do queijo vegetal. Se utilizar produtos industrializados, certifique-se de que não contenham leite ou derivados.
+**Dica:** tempere o frango desfiado ainda quente, logo depois de cozido. Ele absorve muito melhor os temperos do que quando já esfriou.

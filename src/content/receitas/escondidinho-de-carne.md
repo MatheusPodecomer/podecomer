@@ -41,4 +41,4 @@ Rende 6 porções · aproximadamente 1 hora e 10 minutos de preparo. Uma opção
 8. Espalhe o purê uniformemente e leve ao forno preaquecido a 200°C por aproximadamente 20 a 25 minutos, ou até a superfície ficar dourada.
 9. Retire do forno, deixe descansar por alguns minutos e sirva.
 
-**Dica:** para deixar o purê mais cremoso, você pode misturar batata comum com batata-doce ou mandioca. Se a pessoa tiver restrição alimentar, confira sempre o rótulo do leite vegetal utilizado.
+**Dica:** para um purê ainda mais cremoso, misture batata comum com batata-doce ou mandioca na mesma panela. Uma variação boa para depois: trocar a carne moída por frango desfiado, usando o mesmo tempero.

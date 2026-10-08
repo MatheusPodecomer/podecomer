@@ -36,4 +36,4 @@ Rende 4 porções · 35 minutos de preparo.
 9. Prove e ajuste o sal e a pimenta.
 10. Finalize com cheiro-verde e sirva.
 
-**Dica:** para manter a receita realmente sem glúten e sem lactose, confira os rótulos do ketchup, da mostarda, do molho de tomate, do creme vegetal e dos temperos — e evite contaminação cruzada durante o preparo. Sirva com arroz branco e batata-palha certificada sem glúten.
+**Dica:** se o molho ficar ralo demais, deixe cozinhar mais um ou dois minutos em fogo baixo antes de colocar o creme vegetal — ele engrossa naturalmente por redução, sem precisar de farinha (o que ajuda a manter a receita sem glúten). Sirva com arroz branco e batata-palha certificada sem glúten.

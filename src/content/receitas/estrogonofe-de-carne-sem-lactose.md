@@ -36,4 +36,4 @@ Rende 4 porções · 35 minutos de preparo. Perfeito para acompanhar arroz branc
 9. Cozinhe por mais 2 a 3 minutos, sem deixar ferver intensamente, até o molho ficar cremoso.
 10. Ajuste o sal e a pimenta e finalize com cheiro-verde.
 
-**Dica:** para uma versão adequada a pessoas com restrições alimentares, confira sempre o rótulo do creme vegetal, ketchup, mostarda, molho de tomate e batata-palha para garantir que não contenham leite ou derivados. Sirva com arroz branco e batata-palha.
+**Dica:** o segredo da carne macia é dourar em fogo bem alto e em porções pequenas. Se jogar tudo de uma vez, a carne solta água e acaba cozinhando em vez de dourar. Sirva com arroz branco e batata-palha.

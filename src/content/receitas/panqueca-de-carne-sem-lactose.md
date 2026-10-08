@@ -38,4 +38,4 @@ Rende 8 a 10 panquecas · aproximadamente 45 minutos de preparo.
 3. **Faça as panquecas:** aqueça uma frigideira antiaderente e, se necessário, unte levemente com óleo. Coloque uma pequena quantidade de massa e espalhe pela frigideira, formando uma camada fina. Doure dos dois lados e repita até terminar a massa.
 4. **Monte:** coloque uma porção de carne no centro de cada panqueca e enrole. Disponha as panquecas em uma travessa, cubra com molho de tomate e leve ao forno preaquecido a 180°C por cerca de 15 minutos. Finalize com cheiro-verde ou orégano.
 
-**Dica:** apesar de usar leite sem lactose, vale conferir o rótulo dos produtos utilizados, especialmente molho de tomate e outros ingredientes industrializados, para garantir que estejam adequados à restrição desejada.
+**Dica:** a massa rende bem e, se sobrar, se conserva na geladeira por até 2 dias, bem tampada. É só dar uma mexida antes de usar, porque ela costuma decantar um pouco.

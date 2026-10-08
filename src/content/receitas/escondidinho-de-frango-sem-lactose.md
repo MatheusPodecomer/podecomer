@@ -63,4 +63,4 @@ Espalhe o queijo sem lactose ralado sobre o purê. Se desejar, salpique um pouco
 
 Preaqueça o forno a 200°C. Leve o escondidinho ao forno por aproximadamente 20 minutos, ou até o queijo derreter e a superfície ficar levemente dourada. Sirva ainda quente.
 
-**Dica:** para manter a receita realmente sem lactose, confira os rótulos de todos os produtos industrializados utilizados, especialmente o leite, a margarina e o queijo. Utilize produtos identificados como sem lactose. O azeite pode substituir a margarina sem lactose no purê caso você prefira uma preparação ainda mais simples.
+**Dica:** o azeite pode substituir a margarina sem lactose no purê, deixando a receita ainda mais simples. Se sobrar purê, ele também vira um ótimo acompanhamento sozinho, só com um fio de azeite por cima.

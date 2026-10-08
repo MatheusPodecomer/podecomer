@@ -45,4 +45,4 @@ Rende aproximadamente 20 esfirras · 1 hora e 40 minutos de preparo. Perfeita pa
 11. Leve ao forno preaquecido a 200°C por aproximadamente 20 a 25 minutos, ou até a massa ficar levemente dourada.
 12. Retire do forno e sirva ainda quentinha.
 
-**Dica:** para manter a receita realmente sem lactose, confira os rótulos dos ingredientes industrializados utilizados, especialmente o fermento, temperos e outros produtos que possam conter derivados de leite.
+**Dica:** se quiser adiantar o preparo, faça a massa na véspera e deixe crescer na geladeira durante a noite. No dia seguinte, basta deixar a massa uns 20 minutos fora da geladeira antes de abrir e rechear.
