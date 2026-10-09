@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://podecomer.blog.br/sitemap-index.xml
+Sitemap: https://podecomer.blog.br/sitemap.xml
