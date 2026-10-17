@@ -19,7 +19,7 @@ const schema = montarSchema({
   body: receita.body,
 });
 ---
-<Layout title={receita.data.title}>
+<Layout title={receita.data.title} descricao={receita.data.descricao} imagem={receita.data.imagem} tipo="article">
   <p><a href="/receitas" class="voltar">← Voltar para todas as receitas</a></p>
   <span class="tag">{receita.data.categoria}</span>
   <h1>{receita.data.title}</h1>
