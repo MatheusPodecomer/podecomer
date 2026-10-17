@@ -14,7 +14,17 @@ const { title } = Astro.props;
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="/images/logo.png" />
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2467562254171186" crossorigin="anonymous"></script>
-    <title>{title} · PodeComer</title>
+        <meta name="description" content={Astro.props.descricao ?? 'Receitas para quem tem restrições alimentares: sem lactose, sem glúten e muito mais.'} />
+    <link rel="canonical" href={'https://podecomer.blog.br' + Astro.url.pathname.replace(/\/+$/, '')} />
+    <meta property="og:site_name" content="PodeComer" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:type" content={Astro.props.tipo ?? 'website'} />
+    <meta property="og:title" content={Astro.props.title + ' · PodeComer'} />
+    <meta property="og:description" content={Astro.props.descricao ?? 'Receitas para quem tem restrições alimentares: sem lactose, sem glúten e muito mais.'} />
+    <meta property="og:url" content={'https://podecomer.blog.br' + Astro.url.pathname.replace(/\/+$/, '')} />
+    <meta property="og:image" content={'https://podecomer.blog.br' + (Astro.props.imagem ?? '/images/logo.png')} />
+    <meta name="twitter:card" content="summary_large_image" />
+<title>{title} · PodeComer</title>
   </head>
   <body>
     <div class="nav-wrap">
