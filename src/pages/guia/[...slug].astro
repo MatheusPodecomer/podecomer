@@ -13,7 +13,7 @@ export async function getStaticPaths() {
 const { artigo } = Astro.props;
 const { Content } = await artigo.render();
 ---
-<Layout title={artigo.data.title}>
+<Layout title={artigo.data.title} descricao={artigo.data.descricao} tipo="article">
   <p><a href="/guia" class="voltar">← Voltar para o Guia</a></p>
   <h1>{artigo.data.title}</h1>
   <p class="descricao">{artigo.data.descricao}</p>
