@@ -35,6 +35,35 @@ export function extrairPassos(corpo) {
   return passos;
 }
 
+function primeiraLinha(corpo) {
+  const linhas = (corpo || '').split('\n');
+  const linha = linhas.find((l) => l.trim() !== '');
+  return linha ? linha.trim() : '';
+}
+
+export function extrairMinutos(corpo) {
+  const linha = primeiraLinha(corpo);
+  const h = linha.match(/(\d+)\s*horas?/i);
+  const m = linha.match(/(\d+)\s*minutos?/i);
+  const total =
+    (h ? parseInt(h[1], 10) * 60 : 0) + (m ? parseInt(m[1], 10) : 0);
+  return total > 0 ? total : null;
+}
+
+export function formatarDuracao(minutos) {
+  const h = Math.floor(minutos / 60);
+  const m = minutos % 60;
+  return 'PT' + (h > 0 ? h + 'H' : '') + (m > 0 ? m + 'M' : '');
+}
+
+export function extrairRendimento(corpo) {
+  const linha = primeiraLinha(corpo);
+  const r = linha.match(
+    /(\d+(?:\s+a\s+\d+)?)\s+(porç(?:ão|ões)|panquecas?|esfirras?|pedaços?|unidades?)/i
+  );
+  return r ? r[1] + ' ' + r[2] : null;
+}
+
 export function montarSchema({ slug, data, body }) {
   if (!data.imagem) return null;
   const ingredientes = extrairIngredientes(body);
@@ -49,6 +78,10 @@ export function montarSchema({ slug, data, body }) {
     recipeCategory: data.categoria,
     url: `${SITE}/receitas/${slug}`,
   };
+  const minutos = extrairMinutos(body);
+  const rendimento = extrairRendimento(body);
+  if (minutos) schema.totalTime = formatarDuracao(minutos);
+  if (rendimento) schema.recipeYield = rendimento;
   if (ingredientes.length > 0) schema.recipeIngredient = ingredientes;
   if (passos.length > 0) {
     schema.recipeInstructions = passos.map((text) => ({
